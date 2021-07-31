@@ -11,7 +11,7 @@ const mutation : IResolvers = {
             } else {
                 user.id = lastUser[0].id + 1;
             }
-            user.registerDate = new Datetime().getCurrentDateTime;
+            user.registerDate = new Datetime().getCurrentDateTime();
             await db.collection('users').insertOne(user);
             return user;
         }
