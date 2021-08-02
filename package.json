@@ -15,7 +15,7 @@
     "jwt",
     "mongodb"
   ],
-  "author": "Billy Rafael Valdez <billyvaldez96@gmail.com>",
+  "author": "Billy Rafael Valdez",
   "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^2.6.7",
@@ -41,6 +41,8 @@
     "@types/express-graphql": "^0.8.0",
     "@types/graphql": "^14.2.2",
     "@types/mongodb": "^3.6.20",
-    "@types/node": "^12.0.10"
+    "@types/node": "^12.0.10",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0"
   }
 }

@@ -9,7 +9,6 @@ import Database from './config/database';
 
 if (process.env.NODE_ENV !== 'production'){
     const envs = environments;
-    console.log(envs);
 }
 
 
@@ -35,11 +34,11 @@ async function init(){
 
     server.applyMiddleware({ app });
 
-    const PORT = process.env.PORT || 5300;
+    const PORT = process.env.PORT;
     const httpServer = createServer(app);
     httpServer.listen(
         { port : PORT },
-        () => console.log(`Hola Mundo API GraphQL http://localhost:${PORT}/graphql`)
+        () => console.log(`http://localhost:${PORT}/graphql`)
     );
 }
 

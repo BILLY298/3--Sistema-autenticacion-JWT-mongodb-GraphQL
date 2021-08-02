@@ -5,12 +5,12 @@
     login(email: String!, password: String!): User!
     "Obtener nuestra informacion con el token"
     me: User!
+    
+    empleados: [Empleado!]!
+    herramientas: [Herramienta!]!
+    movimientos: [Movimiento!]!
 }
 
-type Mutation{
-    "Registro de los usuarios en el sistema"
-    register(user: UserInput): User!
-}
 
 type User {
     id: ID!
@@ -26,4 +26,67 @@ input UserInput{
     lastname: String!
     email: String!
     password: String!
+}
+
+type Herramienta{
+    id: ID!
+    tipo: String!
+    estado:String!
+    nombre_herramienta: String!
+    codigo_herramienta: String!
+    descripcion:String!
+    registerDate: String!
+}
+
+input HerramientaInput{
+    tipo: String!
+    estado:String!
+    nombre_herramienta: String!
+    codigo_herramienta: String!
+    descripcion:String!
+}
+
+
+type Empleado{
+    id: ID!
+    no_ficha: String!
+    nombre_empleado: String!
+    apellido_empleado: String!
+    telefono: Int!
+    registerDate: String!
+}
+
+input EmpleadoInput{
+    no_ficha: String!
+    nombre_empleado: String!
+    apellido_empleado: String!
+    telefono: Int!
+}
+
+type Movimiento{
+    id: ID!
+    fecha: String!
+    bodeguero:String!
+    no_ficha_empleado: String!
+    codigo_herramienta: String!
+    tipo: String!
+}
+
+input MovimientoInput{
+    bodeguero:String!
+    no_ficha_empleado: String!
+    codigo_herramienta: String!
+    tipo: String!
+}
+    
+type Mutation{
+    "Registro de los usuarios en el sistema"
+    registerUser(user: UserInput): User!
+ 
+    registerEmpleado(empleado: EmpleadoInput): Empleado!
+    eliminarEmpleado(id: ID): Empleado!
+
+    registerHerramienta(herramienta: HerramientaInput): Herramienta!
+    
+    registerMovimiento(movimiento: MovimientoInput): Movimiento!
 }

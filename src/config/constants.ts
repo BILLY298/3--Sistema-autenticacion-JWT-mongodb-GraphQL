@@ -4,4 +4,4 @@ if (process.env.NODE_ENV !== 'production'){
     const environment = environments;
 }
 
-const SECRET_KEY = process.env.SECRET || 'BillyValdez';
+const SECRET_KEY = process.env.SECRET;
