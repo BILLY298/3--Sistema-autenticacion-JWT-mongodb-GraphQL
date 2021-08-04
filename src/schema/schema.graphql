@@ -7,10 +7,14 @@
     me: User!
     
     empleados: [Empleado!]!
-    herramientas: [Herramienta!]!
-    movimientos: [Movimiento!]!
-}
+    empleado(id : ID!): Empleado
 
+    herramientas: [Herramienta!]!
+    herramienta(id : ID!): Herramienta
+
+    movimientos: [Movimiento!]!
+    movimiento(id : ID!): Movimiento
+}
 
 type User {
     id: ID!
@@ -87,6 +91,8 @@ type Mutation{
     eliminarEmpleado(id: ID): Empleado!
 
     registerHerramienta(herramienta: HerramientaInput): Herramienta!
+    eliminarHerramienta(id: ID): Herramienta!
     
     registerMovimiento(movimiento: MovimientoInput): Movimiento!
+    eliminarMovimiento(id: ID): Movimiento!
 }
